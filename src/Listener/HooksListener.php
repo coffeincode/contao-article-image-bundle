@@ -21,7 +21,7 @@ class HooksListener
             $mod_article_before_content_elements->noBgVideoLoop = $arrData['noBgVideoLoop'];
             $mod_article_before_content_elements->viewBgVideoOnMobile = $arrData['viewBgVideoOnMobile'];
             $mod_article_before_content_elements->viewBgImageOnMobile = $arrData['viewBgImageOnMobile'];
-            $mod_article_before_content_elements->verticalBgShift = $arrData['verticalBgShift'];
+            $mod_article_before_content_elements->verticalBgShift = isset($arrData['verticalBgShift'])?$arrData['verticalBgShift']:'0';
             $mod_article_before_content_elements->bgParallax = $arrData['bgParallax'];
             $mod_article_before_content_elements->BgCssFilter = $arrData['BgCssFilter'];
             $elements = $objTemplate->elements;
