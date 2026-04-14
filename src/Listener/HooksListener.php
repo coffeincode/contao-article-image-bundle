@@ -34,7 +34,7 @@ class HooksListener
     public function onParseTemplate(Template $objTemplate)
     {
         if ($objTemplate->type == 'article') {
-            if ( StringUtil::deserialize($objTemplate->bgColor)[0] ) { 
+            if (isset($objTemplate->bgColor) && StringUtil::deserialize($objTemplate->bgColor)[0] ) {
                 $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->bgColor)[0], StringUtil::deserialize($objTemplate->bgColor)[1]) .';';
                 $objTemplate->class .= ' article_bg_color';
             }
