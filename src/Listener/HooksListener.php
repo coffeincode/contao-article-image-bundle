@@ -38,11 +38,11 @@ class HooksListener
                 $objTemplate->style .= ' --article_bg_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->bgColor)[0], StringUtil::deserialize($objTemplate->bgColor)[1]) .';';
                 $objTemplate->class .= ' article_bg_color';
             }
-            if ( StringUtil::deserialize($objTemplate->fontColor)[0] ) { 
+            if ( isset($objTemplate->fontColor) && StringUtil::deserialize($objTemplate->fontColor)[0] ) {
                 $objTemplate->style .= ' --font_color: '. getRgbaFromHexAndOpacity(StringUtil::deserialize($objTemplate->fontColor)[0], StringUtil::deserialize($objTemplate->fontColor)[1]) .';';
                 $objTemplate->class .= ' font_color';
             }
-            if ( $objTemplate->articleImage ) { 
+            if ( isset($objTemplate->articleImage) && $objTemplate->articleImage ) {
                 $objTemplate->class .= ' has_img';
             }
         }
