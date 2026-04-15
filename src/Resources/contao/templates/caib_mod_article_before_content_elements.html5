@@ -18,7 +18,7 @@
     $GLOBALS['TL_HEAD'][] = '<script defer src="/bundles/heimseitencontaoarticleimage/jarallax_settings.js"></script>';
   }
 
-  if ($this->articleVideo) {
+  if (isset($this->articleVideo) && $this->articleVideo != '') {
       if (!$this->noBgVideoLoop) { $bg_bg_video_loop = ' loop'; }
       if ($this->articleImage) { $bg_video_poster = '{{file::' . StringUtil::deserialize($this->articleImage) . '}}'; }
       echo '<div class="article_bg video'.$parallax_class.'" style="'.$styles.'"><div class="inside" style="margin-top: -'.$this->verticalBgShift.'%;">';
@@ -26,7 +26,7 @@
       echo '</div></div>';
   }
 
-  if ($this->articleImage) {
+  if (isset($this->articleImage) && $this->articleImage != '') {
       echo '<div class="article_bg image'.$parallax_class.'">';
         echo '<div class="inside" style="'.$styles.'">{{picture::'.FilesModel::findByPk(StringUtil::deserialize($this->articleImage))->path.'?size=' . StringUtil::deserialize($this->articleImageSize)[2] . '}}</div>';
       echo '</div>';
